@@ -146,6 +146,16 @@ img.add_border {
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW1 - 41023215</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="351" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/OMQ2i6S5tM4" title="國立虎尾科技大學 - 機械設計工程系 - cd2025 HW1 - 41023215" width="665"></iframe></p>
+<p>過程:</p>
+<p>新增robot。</p>
+<p>robot中的children建立1個solid群組，2個higejoint群組，並選一個為首要，命名為joint1。</p>
+<p><span>joint1中的endpoint選擇solid，命名為link1，並往下的children中建立pose及higejoint，pose下在建立shape為主動桿。</span></p>
+<p><span>shape命名為link1，設higejoint為主動桿與第二桿連接，並命名為joint2。</span></p>
+<p><span>在joint1下有boundingObject，選擇pose，往下children選擇 link1。</span></p>
+<p>重複製作，為base--&gt;joint1--&gt;link1--&gt;<span>joint2--&gt;link2--&gt;</span><span>joint3--&gt;link3--&gt;joint4。</span></p>
+<p><span>joint4在robot群組中的children，與joint1同排列，並將endpoint設為solidreference，並選link3。</span></p>
+<p><span>每一階的joint中各有jointparameters、device、emdpoint，其中link1上的device要加入Rotationalmotor，並命名為motor。</span></p>
+<p><span>每一階的jointparameters，axis設為(0,0,1)，anchor要設為桿的長度，而joint到joint的距離，分別為(-0.5,0,0)、(0.4,0,0)、(0.6,0,0)，此座標是接續的，原點根據base的起點，另外設置的joint4則為(0.5,0,0)。</span></p>
 <p>心得:</p>
 <p>這次的HW1作業讓我學習到如何利用webots建立四連桿，雖然過程中遇到了一些問題，像是轉動時連桿跑掉，連桿沒有連動在一起，還有程式的輸入錯誤，導致連桿沒有辦法正常的轉動，後來經過同學和問AI才順利解決。</p>
 <p><a href="./../downloads/HW1.zip">HW1.zip</a></p><br />Homework << <a href='Homework.html'>Previous</a> <a href='HW2.html'>Next</a> >> HW2</div>
